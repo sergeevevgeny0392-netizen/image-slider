@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер изображений — кейс-задача № 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="slider-wrapper">
+        <h1 class="slider-title">Слайдер изображений</h1>
+
+        <section class="slider" aria-roledescription="карусель" aria-label="Галерея изображений">
+            <div class="viewport">
+                <ul class="track">
+                    <li class="slide"><img src="https://picsum.photos/id/1015/900/500" alt="Горы и река"></li>
+                    <li class="slide"><img src="https://picsum.photos/id/1016/900/500" alt="Каньон"></li>
+                    <li class="slide"><img src="https://picsum.photos/id/1018/900/500" alt="Горный хребет"></li>
+                    <li class="slide"><img src="https://picsum.photos/id/1019/900/500" alt="Закат над морем"></li>
+                    <li class="slide"><img src="https://picsum.photos/id/1039/900/500" alt="Лес и водопад"></li>
+                </ul>
+            </div>
+
+            <button class="btn btn-prev" id="prevBtn" aria-label="Предыдущее изображение">&#10094;</button>
+            <button class="btn btn-next" id="nextBtn" aria-label="Следующее изображение">&#10095;</button>
+
+            <p class="counter" id="counter">Изображение 1 из 5</p>
+
+            <div class="dots" id="dots" role="tablist" aria-label="Выбор изображения"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

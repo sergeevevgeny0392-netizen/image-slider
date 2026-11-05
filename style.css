@@ -1,0 +1,131 @@
+/* Стили слайдера — кейс-задача № 3 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3f4f6;
+}
+
+.slider-wrapper {
+    width: min(960px, 92vw);
+    padding: 24px;
+}
+
+.slider-title {
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+    color: #e5e7eb;
+}
+
+.slider {
+    position: relative;
+    border: 3px solid #374151;
+    border-radius: 16px;
+    background: #0b1220;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+}
+
+.viewport {
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    list-style: none;
+    transition: transform 0.45s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+}
+
+/* Кнопки "вперёд"/"назад" */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.65);
+    color: #f9fafb;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.15s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover {
+    background: rgba(59, 130, 246, 0.85);
+}
+
+.btn:active {
+    transform: translateY(-50%) scale(0.94);
+}
+
+.btn-prev { left: 14px; }
+.btn-next { right: 14px; }
+
+/* Счётчик "Изображение N из 5" */
+.counter {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+/* Точки-индикаторы */
+.dots {
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(148, 163, 184, 0.45);
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+}
+
+.dot.active {
+    background: #38bdf8;
+    transform: scale(1.25);
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+    .slide img { height: 280px; }
+    .btn { width: 40px; height: 40px; }
+}
